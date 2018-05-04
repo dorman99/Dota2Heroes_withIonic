@@ -13,6 +13,10 @@ import { HttpClientModule } from '@angular/common/http'
 import { DetailHeroPage } from '../pages/detail-hero/detail-hero';
 import { SettingPage } from '../pages/setting/setting';
 import { CompassPage } from '../pages/compass/compass';
+import { PlacesService } from '../services/Places.service';
+import { Geolocation } from '@ionic-native/geolocation';
+
+// import { Storage } from '@ionic/storage';
 
 
 @NgModule({
@@ -43,7 +47,10 @@ import { CompassPage } from '../pages/compass/compass';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HeroesService,
-    HTTP
+    HTTP,
+    PlacesService,
+    Geolocation
+    // Storage
   ]
 })
 export class AppModule {}

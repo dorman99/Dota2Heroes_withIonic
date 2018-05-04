@@ -13,11 +13,6 @@ export class HeroesService {
         })
     }
 
-    addHero (hero: {name:string},cb) {
-        this.heroes.push(hero)
-        cb()
-    }
-
     getHeroes() {
         return this.heroes.slice()
     }
