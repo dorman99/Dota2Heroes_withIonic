@@ -19,8 +19,8 @@ export class MyApp {
   landingPage:any;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
-      if(localStorage.getItem('token')) {
-        this.landingPage = HomePage
+      if(!true) {
+        this.landingPage = MainPage
       } else {
         this.landingPage = CompassPage
       }
