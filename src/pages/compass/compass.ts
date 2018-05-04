@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { PlacesService } from '../../services/Places.service';
 import { Geolocation } from '@ionic-native/geolocation';
+import { MapPage } from '../map/map';
 
 @IonicPage()
 @Component({
@@ -11,7 +12,10 @@ import { Geolocation } from '@ionic-native/geolocation';
 export class CompassPage {
   private places: any[] = []
   private location: any
-  constructor(private PlacesService: PlacesService, private geolocation: Geolocation) {
+  constructor(
+    private PlacesService: PlacesService, 
+    private geolocation: Geolocation,
+    private modalCtrl: ModalController ) {
     this.places =  this.PlacesService.getPlaces()
   }
 
@@ -24,8 +28,7 @@ export class CompassPage {
     this.geolocation.getCurrentPosition().then((resp) => {
       console.log(resp)
       this.location = resp
-      // resp.coords.latitude
-      // resp.coords.longitude
+      this.modalCtrl.create(MapPage).present();
      }).catch((error) => {
        console.log('Error getting location', error);
      });

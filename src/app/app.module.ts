@@ -15,6 +15,8 @@ import { SettingPage } from '../pages/setting/setting';
 import { CompassPage } from '../pages/compass/compass';
 import { PlacesService } from '../services/Places.service';
 import { Geolocation } from '@ionic-native/geolocation';
+import { MapPage } from '../pages/map/map';
+import { MainPage } from '../pages/main/main';
 
 // import { Storage } from '@ionic/storage';
 
@@ -26,7 +28,9 @@ import { Geolocation } from '@ionic-native/geolocation';
     HeroesPage,
     DetailHeroPage,
     SettingPage,
-    CompassPage
+    CompassPage,
+    MainPage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,9 @@ import { Geolocation } from '@ionic-native/geolocation';
     HeroesPage,
     DetailHeroPage,
     CompassPage,
-    SettingPage
+    SettingPage,
+    MapPage,
+    MainPage
   ],
   providers: [
     StatusBar,
